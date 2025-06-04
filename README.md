@@ -1,4 +1,4 @@
-# TRMNL Blade - Blade wrapper for the TRMNL Design System
+# TRMNL Blade - Blade Components for the TRMNL Design System
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bnussbau/trmnl-blade.svg?style=flat-square)](https://packagist.org/packages/bnussbau/laravel-trmnl-blade)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/bnussbau/laravel-trmnl-blade/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/bnussbau/laravel-trmnl-blade/actions?query=workflow%3Arun-tests+branch%3Amain)
