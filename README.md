@@ -1,9 +1,9 @@
 # TRMNL Blade - Blade Components for the TRMNL Design System
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bnussbau/trmnl-blade.svg?style=flat-square)](https://packagist.org/packages/bnussbau/laravel-trmnl-blade)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/bnussbau/laravel-trmnl-blade.svg?style=flat-square)](https://packagist.org/packages/bnussbau/laravel-trmnl-blade)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/bnussbau/laravel-trmnl-blade/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/bnussbau/laravel-trmnl-blade/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/bnussbau/laravel-trmnl-blade/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/bnussbau/trmnl-blade/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/bnussbau/trmnl-blade.svg?style=flat-square)](https://packagist.org/packages/bnussbau/trmnl-blade)
+[![Total Downloads](https://img.shields.io/packagist/dt/bnussbau/laravel-trmnl-blade.svg?style=flat-square)](https://packagist.org/packages/bnussbau/laravel-trmnl-blade)
 
 🎨 Blade Components on top of the TRMNL Design System ([docs](https://usetrmnl.com/framework))
 
