@@ -1,24 +1,28 @@
 <?php
 
-use Bnussbau\TrmnlBlade\View\Components\Layout;
-use Bnussbau\TrmnlBlade\View\Components\TitleBar;
-use Bnussbau\TrmnlBlade\View\Components\View;
-use Bnussbau\TrmnlBlade\View\Components\Grid;
-use Bnussbau\TrmnlBlade\View\Components\Text;
-use Bnussbau\TrmnlBlade\View\Components\Column;
-use Bnussbau\TrmnlBlade\View\Components\Item;
-use Bnussbau\TrmnlBlade\View\Components\Table;
-use Bnussbau\TrmnlBlade\View\Components\Description;
-use Bnussbau\TrmnlBlade\View\Components\Col;
-use Bnussbau\TrmnlBlade\View\Components\Value;
-use Bnussbau\TrmnlBlade\View\Components\Columns;
+use Bnussbau\TrmnlBlade\View\Components\Background;
 use Bnussbau\TrmnlBlade\View\Components\Clamp;
+use Bnussbau\TrmnlBlade\View\Components\Col;
+use Bnussbau\TrmnlBlade\View\Components\Column;
+use Bnussbau\TrmnlBlade\View\Components\Columns;
 use Bnussbau\TrmnlBlade\View\Components\Content;
-use Bnussbau\TrmnlBlade\View\Components\Meta;
-use Bnussbau\TrmnlBlade\View\Components\Label;
+use Bnussbau\TrmnlBlade\View\Components\Description;
 use Bnussbau\TrmnlBlade\View\Components\Flex;
-use Bnussbau\TrmnlBlade\View\Components\Title;
+use Bnussbau\TrmnlBlade\View\Components\Grid;
+use Bnussbau\TrmnlBlade\View\Components\Item;
+use Bnussbau\TrmnlBlade\View\Components\Label;
+use Bnussbau\TrmnlBlade\View\Components\Layout;
 use Bnussbau\TrmnlBlade\View\Components\Markdown;
+use Bnussbau\TrmnlBlade\View\Components\Mashup;
+use Bnussbau\TrmnlBlade\View\Components\Meta;
+use Bnussbau\TrmnlBlade\View\Components\RichText;
+use Bnussbau\TrmnlBlade\View\Components\Screen;
+use Bnussbau\TrmnlBlade\View\Components\Table;
+use Bnussbau\TrmnlBlade\View\Components\Text;
+use Bnussbau\TrmnlBlade\View\Components\Title;
+use Bnussbau\TrmnlBlade\View\Components\TitleBar;
+use Bnussbau\TrmnlBlade\View\Components\Value;
+use Bnussbau\TrmnlBlade\View\Components\View;
 
 it('can render the view component', function () {
     $view = new View;
@@ -135,4 +139,28 @@ it('can render the markdown component', function () {
     $component = new Markdown;
     $rendered = $component->render();
     expect($rendered->getName())->toBe('trmnl::components.markdown');
+});
+
+it('can render the background component', function () {
+    $component = new Background;
+    $rendered = $component->render();
+    expect($rendered->getName())->toBe('trmnl::components.background');
+});
+
+it('can render the mashup component', function () {
+    $component = new Mashup;
+    $rendered = $component->render();
+    expect($rendered->getName())->toBe('trmnl::components.mashup');
+});
+
+it('can render the screen component', function () {
+    $component = new Screen;
+    $rendered = $component->render();
+    expect($rendered->getName())->toBe('trmnl::components.screen');
+});
+
+it('can render the richtext component', function () {
+    $component = new RichText;
+    $rendered = $component->render();
+    expect($rendered->getName())->toBe('trmnl::components.richtext');
 });
