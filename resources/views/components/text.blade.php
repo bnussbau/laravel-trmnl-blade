@@ -1,4 +1,4 @@
-@props(['alignment' => 'left'])
-<p class="text--{{ $alignment }}">
+@props(['alignment' => 'left', 'shading' => null])
+<p class="text--{{ $alignment }}{{ $shading ? ' text--' . $shading : ''}}">
     {{ $slot }}
 </p>

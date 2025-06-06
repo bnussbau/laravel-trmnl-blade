@@ -1,5 +1,5 @@
 @props(['align' => 'left', 'gapSize' => 'large'])
 
-<div class="richtext richtext--align-{{ $align }} richtext--gap-{{ $gapSize }}">
+<div class="richtext richtext--{{ $align }} gap--{{ $gapSize }}">
     {{ $slot }}
 </div>
