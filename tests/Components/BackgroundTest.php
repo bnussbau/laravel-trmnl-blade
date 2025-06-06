@@ -8,7 +8,7 @@ it('renders background component with default class', function () {
     $rendered = $background->render();
     $html = $rendered->with([
         'slot' => 'Black',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="bg-black">');
@@ -20,7 +20,7 @@ it('renders background component with color gray-1 ', function () {
     $rendered = $background->render();
     $html = $rendered->with([
         'slot' => 'Gray',
-        'attributes' => new ComponentAttributeBag(['color' => 'gray-1'])
+        'attributes' => new ComponentAttributeBag(['color' => 'gray-1']),
     ])->render();
 
     expect($html)->toContain('<div class="bg-gray-1">');
@@ -32,7 +32,7 @@ it('renders background component with color white', function () {
     $rendered = $background->render();
     $html = $rendered->with([
         'slot' => 'White',
-        'attributes' => new ComponentAttributeBag(['color' => 'white'])
+        'attributes' => new ComponentAttributeBag(['color' => 'white']),
     ])->render();
 
     expect($html)->toContain('<div class="bg-white">');

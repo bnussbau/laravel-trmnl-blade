@@ -8,7 +8,7 @@ it('renders content component with default class', function () {
     $rendered = $content->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="content">');
@@ -22,8 +22,8 @@ it('merges additional attributes with component classes', function () {
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
             'data-test' => 'value',
-            'class' => 'custom-class'
-        ])
+            'class' => 'custom-class',
+        ]),
     ])->render();
 
     expect($html)->toContain('class="content custom-class"');
@@ -36,8 +36,8 @@ it('merges data-pixel-perfect attribute', function () {
     $html = $rendered->with([
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
-            'data-pixel-perfect' => 'true'
-        ])
+            'data-pixel-perfect' => 'true',
+        ]),
     ])->render();
 
     expect($html)->toContain('data-pixel-perfect="true"');
@@ -48,7 +48,7 @@ it('renders content component with different gap sizes', function ($gapSize, $ex
     $rendered = $content->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['gapSize' => $gapSize])
+        'attributes' => new ComponentAttributeBag(['gapSize' => $gapSize]),
     ])->render();
 
     expect($html)->toContain("class=\"content {$expectedClass}\"");
@@ -67,7 +67,7 @@ it('renders content component with content alignment', function () {
     $rendered = $content->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['contentAlignment' => 'center'])
+        'attributes' => new ComponentAttributeBag(['contentAlignment' => 'center']),
     ])->render();
 
     expect($html)->toContain('class="content content--center"');
@@ -78,7 +78,7 @@ it('renders content component with text alignment', function () {
     $rendered = $content->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['textAlignment' => 'right'])
+        'attributes' => new ComponentAttributeBag(['textAlignment' => 'right']),
     ])->render();
 
     expect($html)->toContain('class="content text--right"');
@@ -92,8 +92,8 @@ it('renders content component with multiple classes', function () {
         'attributes' => new ComponentAttributeBag([
             'gapSize' => 'medium',
             'contentAlignment' => 'center',
-            'textAlignment' => 'right'
-        ])
+            'textAlignment' => 'right',
+        ]),
     ])->render();
 
     expect($html)->toContain('class="content gap--medium content--center text--right"');
@@ -104,7 +104,7 @@ it('renders content with content limiter', function () {
     $rendered = $content->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['data-content-limiter' => 'true'])
+        'attributes' => new ComponentAttributeBag(['data-content-limiter' => 'true']),
     ])->render();
 
     expect($html)->toContain('<div class="content" data-content-limiter="true">');

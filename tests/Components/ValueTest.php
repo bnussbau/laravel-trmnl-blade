@@ -8,7 +8,7 @@ it('renders value component with default class', function () {
     $rendered = $value->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<span class="value">');

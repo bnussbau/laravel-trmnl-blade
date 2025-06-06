@@ -12,4 +12,4 @@ class RichText extends Component
     {
         return view('trmnl::components.richtext');
     }
-} 
+}

@@ -8,7 +8,7 @@ it('renders description component with default class', function () {
     $rendered = $description->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<span class="description">');
@@ -22,8 +22,8 @@ it('renders description component with data attributes', function () {
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
             'data-pixel-perfect' => 'true',
-            'class' => 'm--1'
-        ])
+            'class' => 'm--1',
+        ]),
     ])->render();
 
     expect($html)->toContain('<span class="description m--1" data-pixel-perfect="true">');

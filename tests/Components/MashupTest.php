@@ -8,7 +8,7 @@ it('renders mashup component with default class', function () {
     $rendered = $mashup->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="mashup mashup--1Lx1R">');
@@ -21,8 +21,8 @@ it('renders mashup component with 1Tx1B class', function () {
     $html = $rendered->with([
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
-            'mashupLayout' => '1Tx1B'
-        ])
+            'mashupLayout' => '1Tx1B',
+        ]),
     ])->render();
 
     expect($html)->toContain('<div class="mashup mashup--1Tx1B">');

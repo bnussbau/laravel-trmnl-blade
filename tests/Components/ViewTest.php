@@ -16,7 +16,7 @@ it('renders view component with half_horizontal size', function () {
     $rendered = $view->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'size' => 'half_horizontal'
+        'size' => 'half_horizontal',
     ])->render();
 
     expect($html)->toContain('<div class="view view--half_horizontal">');
@@ -28,7 +28,7 @@ it('renders view component with half_vertical size', function () {
     $rendered = $view->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'size' => 'half_vertical'
+        'size' => 'half_vertical',
     ])->render();
 
     expect($html)->toContain('<div class="view view--half_vertical">');
@@ -40,9 +40,9 @@ it('renders view component with quadrant size', function () {
     $rendered = $view->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'size' => 'quadrant'
+        'size' => 'quadrant',
     ])->render();
 
     expect($html)->toContain('<div class="view view--quadrant">');
     expect($html)->toContain('Test content');
-}); 
+});

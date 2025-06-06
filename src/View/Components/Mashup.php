@@ -12,4 +12,4 @@ class Mashup extends Component
     {
         return view('trmnl::components.mashup');
     }
-} 
+}

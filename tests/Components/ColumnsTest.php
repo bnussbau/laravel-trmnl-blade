@@ -1,7 +1,7 @@
 <?php
 
-use Bnussbau\TrmnlBlade\View\Components\Columns;
 use Bnussbau\TrmnlBlade\View\Components\Column;
+use Bnussbau\TrmnlBlade\View\Components\Columns;
 use Illuminate\View\ComponentAttributeBag;
 
 it('renders columns component with default class', function () {
@@ -9,7 +9,7 @@ it('renders columns component with default class', function () {
     $rendered = $columns->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="columns">');
@@ -21,7 +21,7 @@ it('renders column component with default class', function () {
     $rendered = $column->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="column">');

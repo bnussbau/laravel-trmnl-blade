@@ -8,7 +8,7 @@ it('renders table component with default class', function () {
     $rendered = $table->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<table class="table ">');
@@ -21,8 +21,8 @@ it('renders table component with size class', function () {
     $html = $rendered->with([
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
-            'size' => 'condensed'
-        ])
+            'size' => 'condensed',
+        ]),
     ])->render();
 
     expect($html)->toContain('<table class="table table--condensed">');

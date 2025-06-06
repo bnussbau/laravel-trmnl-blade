@@ -8,7 +8,7 @@ it('renders grid component with default class', function () {
     $rendered = $grid->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="grid">');
@@ -21,9 +21,9 @@ it('renders grid component with cols prop', function () {
     $html = $rendered->with([
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([]),
-        'cols' => 4
+        'cols' => 4,
     ])->render();
 
     expect($html)->toContain('<div class="grid grid--cols-4">');
     expect($html)->toContain('Test content');
-}); 
+});

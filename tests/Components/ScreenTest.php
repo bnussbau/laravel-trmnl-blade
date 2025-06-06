@@ -16,7 +16,7 @@ it('renders screen component with noBleed set to true', function () {
     $rendered = $screen->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'noBleed' => true
+        'noBleed' => true,
     ])->render();
 
     expect($html)->toContain('<div class="screen screen--no-bleed">');
@@ -28,7 +28,7 @@ it('renders screen component with noBleed set to false', function () {
     $rendered = $screen->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'noBleed' => false
+        'noBleed' => false,
     ])->render();
 
     expect($html)->toContain('<div class="screen ">');

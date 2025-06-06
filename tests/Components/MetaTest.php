@@ -8,9 +8,9 @@ it('renders meta component with default class', function () {
     $rendered = $meta->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="meta">');
     expect($html)->toContain('Test content');
-}); 
+});

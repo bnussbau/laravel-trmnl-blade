@@ -8,9 +8,9 @@ it('renders item component with default class', function () {
     $rendered = $item->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="item">');
     expect($html)->toContain('Test content');
-}); 
+});

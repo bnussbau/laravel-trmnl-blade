@@ -8,7 +8,7 @@ it('renders label component with default class', function () {
     $rendered = $label->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<span class="label">');
@@ -20,7 +20,7 @@ it('renders label component with variant outline', function () {
     $rendered = $label->render();
     $html = $rendered->with([
         'slot' => 'Outline content',
-        'attributes' => new ComponentAttributeBag(['variant' => 'outline'])
+        'attributes' => new ComponentAttributeBag(['variant' => 'outline']),
     ])->render();
 
     expect($html)->toContain('<span class="label label--outline">');
@@ -32,7 +32,7 @@ it('renders label component with size small', function () {
     $rendered = $label->render();
     $html = $rendered->with([
         'slot' => 'Small content',
-        'attributes' => new ComponentAttributeBag(['size' => 'small'])
+        'attributes' => new ComponentAttributeBag(['size' => 'small']),
     ])->render();
 
     expect($html)->toContain('<span class="label label--small">');
@@ -44,10 +44,9 @@ it('renders label component with size small and attribute data-pixel-perfect', f
     $rendered = $label->render();
     $html = $rendered->with([
         'slot' => 'Small content',
-        'attributes' => new ComponentAttributeBag(['size' => 'small', 'data-pixel-perfect' => 'true'])
+        'attributes' => new ComponentAttributeBag(['size' => 'small', 'data-pixel-perfect' => 'true']),
     ])->render();
 
     expect($html)->toContain('<span class="label label--small" data-pixel-perfect="true">');
     expect($html)->toContain('Small content');
 });
-

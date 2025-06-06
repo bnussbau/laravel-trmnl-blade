@@ -12,4 +12,4 @@ class Screen extends Component
     {
         return view('trmnl::components.screen');
     }
-} 
+}

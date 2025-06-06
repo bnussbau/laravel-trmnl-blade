@@ -8,7 +8,7 @@ it('renders title-bar component with default class', function () {
     $rendered = $titleBar->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="title_bar">');

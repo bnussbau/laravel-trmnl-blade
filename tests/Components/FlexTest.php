@@ -8,7 +8,7 @@ it('renders flex component with default class', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--row flex--left">');
@@ -20,7 +20,7 @@ it('renders flex component with column direction', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['direction' => 'col'])
+        'attributes' => new ComponentAttributeBag(['direction' => 'col']),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--col flex--left">');
@@ -32,7 +32,7 @@ it('renders flex component with center-x alignment', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['alignment' => 'center-x'])
+        'attributes' => new ComponentAttributeBag(['alignment' => 'center-x']),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--row flex--center-x">');
@@ -44,7 +44,7 @@ it('renders flex component with right alignment', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['alignment' => 'right'])
+        'attributes' => new ComponentAttributeBag(['alignment' => 'right']),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--row flex--right">');
@@ -56,7 +56,7 @@ it('renders flex component with stretch', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['stretch' => 'default'])
+        'attributes' => new ComponentAttributeBag(['stretch' => 'default']),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--row flex--left flex--stretch">');
@@ -68,7 +68,7 @@ it('renders flex component with stretch-x', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['stretch' => 'x'])
+        'attributes' => new ComponentAttributeBag(['stretch' => 'x']),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--row flex--left flex--stretch-x">');
@@ -80,7 +80,7 @@ it('renders flex component with stretch-y', function () {
     $rendered = $flex->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['stretch' => 'y'])
+        'attributes' => new ComponentAttributeBag(['stretch' => 'y']),
     ])->render();
 
     expect($html)->toContain('<div class="flex flex--row flex--left flex--stretch-y">');

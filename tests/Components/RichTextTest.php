@@ -8,7 +8,7 @@ it('renders richtext component with default class', function () {
     $rendered = $richtext->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<div class="richtext richtext--left gap--large">');
@@ -20,7 +20,7 @@ it('renders richtext component with custom align prop', function () {
     $rendered = $richtext->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['align' => 'center'])
+        'attributes' => new ComponentAttributeBag(['align' => 'center']),
     ])->render();
 
     expect($html)->toContain('<div class="richtext richtext--center gap--large">');
@@ -32,7 +32,7 @@ it('renders richtext component with custom gapSize prop', function () {
     $rendered = $richtext->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag(['gapSize' => 'small'])
+        'attributes' => new ComponentAttributeBag(['gapSize' => 'small']),
     ])->render();
 
     expect($html)->toContain('<div class="richtext richtext--left gap--small">');
@@ -46,8 +46,8 @@ it('renders richtext component with both custom align and gapSize props', functi
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
             'align' => 'right',
-            'gapSize' => 'medium'
-        ])
+            'gapSize' => 'medium',
+        ]),
     ])->render();
 
     expect($html)->toContain('<div class="richtext richtext--right gap--medium">');

@@ -12,4 +12,4 @@ class Background extends Component
     {
         return view('trmnl::components.background');
     }
-} 
+}

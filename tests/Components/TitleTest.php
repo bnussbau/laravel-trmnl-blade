@@ -8,7 +8,7 @@ it('renders title component with default class', function () {
     $rendered = $title->render();
     $html = $rendered->with([
         'slot' => 'Test content',
-        'attributes' => new ComponentAttributeBag([])
+        'attributes' => new ComponentAttributeBag([]),
     ])->render();
 
     expect($html)->toContain('<span class="title ">');
@@ -21,8 +21,8 @@ it('renders title component with size small', function () {
     $html = $rendered->with([
         'slot' => 'Test content',
         'attributes' => new ComponentAttributeBag([
-            'size' => 'small'
-        ])
+            'size' => 'small',
+        ]),
     ])->render();
 
     expect($html)->toContain('<span class="title  title--small ">');
