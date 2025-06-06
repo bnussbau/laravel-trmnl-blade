@@ -203,12 +203,8 @@ Complex UI components for specific use cases.
     <!-- Item content -->
 </x-trmnl::item>
 
-<x-trmnl::table size="large">
+<x-trmnl::table size="condensed">
     <!-- Table content -->
 </x-trmnl::table>
-
-<x-trmnl::chart>
-    <!-- Chart content -->
-</x-trmnl::chart>
 ```
 </details>
