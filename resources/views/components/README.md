@@ -1,6 +1,6 @@
 # TRMNL Blade Components
 
-This document provides documentation for all available TRMNL Blade components.
+- [see TRMNL Design System](https://usetrmnl.com/framework)
 
 ## Screen
 <details>
