@@ -1,4 +1,4 @@
 @props(['variant' => null, 'size' => null])
-<span {{ $attributes->class(['label', 'label--' . $size => isset($size) , 'label--' . $variant => isset($variant)]) }}>
+<span {{ $attributes->merge(['class' => 'label' . (isset($size) ? ' label--' . $size : '') . (isset($variant) ? ' label--' . $variant : '')]) }}>
     {{ $slot }}
 </span>
