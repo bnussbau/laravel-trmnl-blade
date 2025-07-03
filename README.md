@@ -13,7 +13,7 @@
 - [see TRMNL Design System](https://usetrmnl.com/framework)
 - [resources/views/components](resources/views/components)
 
-Blade Compontens can help you generate markup code. Alternatively, you can just use the native CSS classes from the TRMNL Design System.
+Blade Components can help you generate markup code. Alternatively, you can use the native CSS classes from the TRMNL Design System.
 
 ### Usage
 
@@ -66,6 +66,7 @@ This is the contents of the published config file:
 ```php
 return [
     'framework_version' => env('TRMNL_BLADE_FRAMEWORK_VERSION', '1.0.0'),
+    'offline' => env('TRMNL_BLADE_FRAMEWORK_OFFLINE', false),
 ];
 ```
 
@@ -74,6 +75,10 @@ return [
 ```bash
 php artisan vendor:publish --tag="trmnl-views"
 ```
+
+### Offline Mode
+
+By default, the TRMNL Design System resources (CSS, JS, and fonts) are loaded from a CDN. If you want to use the resources offline, you can set the `TRMNL_BLADE_FRAMEWORK_OFFLINE` environment variable to `true` or update the config file directly.
 
 ## Testing
 
