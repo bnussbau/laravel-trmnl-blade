@@ -28,7 +28,7 @@ class TrmnlBladeServiceProvider extends PackageServiceProvider
 
         if (config('trmnl-blade.offline', false)) {
             Route::get('vendor/trmnl-blade/{path}', function ($path) {
-                $filePath = __DIR__ . '/../resources/' . $path;
+                $filePath = __DIR__.'/../resources/'.$path;
                 if (file_exists($filePath)) {
                     $extension = pathinfo($filePath, PATHINFO_EXTENSION);
                     $mimeTypes = [
@@ -40,6 +40,7 @@ class TrmnlBladeServiceProvider extends PackageServiceProvider
                     ];
 
                     $mimeType = $mimeTypes[$extension] ?? 'application/octet-stream';
+
                     return response()->file($filePath, ['Content-Type' => $mimeType]);
                 }
                 abort(404);
