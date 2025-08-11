@@ -7,7 +7,7 @@ it('renders screen component with default noBleed value', function () {
     $rendered = $screen->render();
     $html = $rendered->with('slot', 'Test content')->render();
 
-    expect($html)->toContain('<div class="screen ">');
+    expect($html)->toContain('<div class="screen  ">');
     expect($html)->toContain('Test content');
 });
 
@@ -19,7 +19,19 @@ it('renders screen component with noBleed set to true', function () {
         'noBleed' => true,
     ])->render();
 
-    expect($html)->toContain('<div class="screen screen--no-bleed">');
+    expect($html)->toContain('<div class="screen screen--no-bleed ">');
+    expect($html)->toContain('Test content');
+});
+
+it('renders screen component with darkMode set to true', function () {
+    $screen = new Screen;
+    $rendered = $screen->render();
+    $html = $rendered->with([
+        'slot' => 'Test content',
+        'darkMode' => true,
+    ])->render();
+
+    expect($html)->toContain('<div class="screen  dark-mode">');
     expect($html)->toContain('Test content');
 });
 
@@ -31,6 +43,6 @@ it('renders screen component with noBleed set to false', function () {
         'noBleed' => false,
     ])->render();
 
-    expect($html)->toContain('<div class="screen ">');
+    expect($html)->toContain('<div class="screen  ">');
     expect($html)->toContain('Test content');
 });
