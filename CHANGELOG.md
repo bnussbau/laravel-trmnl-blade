@@ -2,6 +2,15 @@
 
 All notable changes to `trmnl-blade` will be documented in this file.
 
+## 1.2.1 - 2025-08-11
+
+### What's Changed
+
+* feat: allow custom js/css urls. allows pre-release testing of TRMNL Framework, or self-hosting
+* feat: add support for dark mode
+
+**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/1.2.0...1.2.1
+
 ## 1.2.0 - 2025-07-28
 
 ### What's Changed
