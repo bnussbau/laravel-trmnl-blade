@@ -1,4 +1,4 @@
-@props(['noBleed' => false, 'darkMode' => false])
+@props(['noBleed' => false, 'darkMode' => false, 'deviceVariant' => 'og', 'deviceOrientation' => null, 'colorDepth' => '1bit'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -20,7 +20,7 @@
     <title>{{ $title ?? config('app.name') }}</title>
 </head>
 <body class="environment trmnl">
-<div class="screen {{$noBleed ? 'screen--no-bleed' : ''}} {{ $darkMode ? 'dark-mode' : '' }}">
+<div class="screen {{$noBleed ? 'screen--no-bleed' : ''}} {{ $darkMode ? 'dark-mode' : '' }} {{$deviceVariant ? 'screen--' . $deviceVariant : ''}} {{ $deviceOrientation ? 'screen--' . $deviceOrientation : ''}} {{ $colorDepth ? 'screen--' . $colorDepth : ''}}">
     {{ $slot }}
 </div>
 </body>
