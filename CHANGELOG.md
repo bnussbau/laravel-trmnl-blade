@@ -2,6 +2,14 @@
 
 All notable changes to `trmnl-blade` will be documented in this file.
 
+## 2.1.0 - 2026-01-02
+
+### What's Changed
+
+* Bump default Framework version to 2.1.0
+
+**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.0.1...2.1.0
+
 ## 2.0.1 - 2025-09-22
 
 ### What's Changed
