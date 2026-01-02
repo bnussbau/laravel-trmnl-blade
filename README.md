@@ -65,7 +65,7 @@ This is the contents of the published config file:
 
 ```php
 return [
-    'framework_version' => env('TRMNL_BLADE_FRAMEWORK_VERSION', '2.0.0'),
+    'framework_version' => env('TRMNL_BLADE_FRAMEWORK_VERSION', '2.1.0'),
 ];
 ```
 
