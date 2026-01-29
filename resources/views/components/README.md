@@ -1,6 +1,6 @@
 # TRMNL Blade Components
 
-- [see TRMNL Design System](https://usetrmnl.com/framework)
+- [see TRMNL Design System](https://trmnl.com/framework)
 
 ## Screen
 <details>
@@ -86,7 +86,7 @@ Header component with title and optional image.
 
 ### Example
 ```blade
-<x-trmnl::title-bar title="My App" image="https://usetrmnl.com/images/plugins/trmnl--render.svg" instance="Instance Name">
+<x-trmnl::title-bar title="My App" image="https://trmnl.com/images/plugins/trmnl--render.svg" instance="Instance Name">
     <!-- Optional inline content when image="inline" -->
 </x-trmnl::title-bar>
 ```

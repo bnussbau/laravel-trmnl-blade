@@ -5,12 +5,12 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/bnussbau/laravel-trmnl-blade/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/bnussbau/trmnl-blade/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/bnussbau/laravel-trmnl-blade.svg?style=flat-square)](https://packagist.org/packages/bnussbau/laravel-trmnl-blade)
 
-🎨 Blade Components on top of the TRMNL Design System ([docs](https://usetrmnl.com/framework))
+🎨 Blade Components on top of the TRMNL Design System ([docs](https://trmnl.com/framework))
 
 ## Support us
 
 ## Blade Components
-- [see TRMNL Design System](https://usetrmnl.com/framework)
+- [see TRMNL Design System](https://trmnl.com/framework)
 - [resources/views/components](resources/views/components)
 
 Blade Compontens can help you generate markup code. Alternatively, you can just use the native CSS classes from the TRMNL Design System.
