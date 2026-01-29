@@ -2,6 +2,15 @@
 
 All notable changes to `trmnl-blade` will be documented in this file.
 
+## 2.1.1 - 2026-01-29
+
+### What's Changed
+
+* chore: update trmnl base url
+* chore(deps): bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/bnussbau/laravel-trmnl-blade/pull/9
+
+**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.1.0...2.1.1
+
 ## 2.1.0 - 2026-01-02
 
 ### What's Changed
