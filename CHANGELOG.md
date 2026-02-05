@@ -2,6 +2,18 @@
 
 All notable changes to `trmnl-blade` will be documented in this file.
 
+## 2.2.1 - 2026-02-05
+
+### What's Changed
+
+* added support for separate framework CSS and JS version numbers via `framework_css_version` and `framework_js_version` config (and env `TRMNL_BLADE_FRAMEWORK_CSS_VERSION`, `TRMNL_BLADE_FRAMEWORK_JS_VERSION`). When unset, `framework_version` is used for both assets. Backward compatible.
+* Bump default TRMNL Framework versions to
+  * CSS: `2.2.1`
+  * JS: `2.1.0`
+  
+
+**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.1.1...2.2.1
+
 ## 2.1.1 - 2026-01-29
 
 ### What's Changed
