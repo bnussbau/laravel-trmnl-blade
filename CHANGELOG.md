@@ -2,6 +2,14 @@
 
 All notable changes to `trmnl-blade` will be documented in this file.
 
+## 2.3.0 - 2026-02-09
+
+### What's Changed
+
+* feat: bump `TRMNL_BLADE_FRAMEWORK_CSS_VERSION` to 2.3.0
+
+**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.2.1...2.3.0
+
 ## 2.2.1 - 2026-02-05
 
 ### What's Changed
