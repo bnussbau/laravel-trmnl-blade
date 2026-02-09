@@ -1,0 +1,164 @@
+name: Check framework version
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: check-framework-version
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Parse current versions
+        id: parse
+        run: |
+          CSS_LINE=$(grep "framework_css_version" config/trmnl-blade.php)
+          JS_LINE=$(grep "framework_js_version" config/trmnl-blade.php)
+          CURRENT_CSS=$(echo "$CSS_LINE" | sed -n "s/.*, '\([0-9.]*\)'.*/\1/p")
+          CURRENT_JS=$(echo "$JS_LINE" | sed -n "s/.*, '\([0-9.]*\)'.*/\1/p")
+          echo "current_css=$CURRENT_CSS" >> "$GITHUB_OUTPUT"
+          echo "current_js=$CURRENT_JS" >> "$GITHUB_OUTPUT"
+
+      - name: Compute next patch and minor versions
+        id: versions
+        run: |
+          current_css="${{ steps.parse.outputs.current_css }}"
+          current_js="${{ steps.parse.outputs.current_js }}"
+
+          css_patch=$(echo "$current_css" | awk -F. '{ printf "%d.%d.%d", $1, $2, $3+1 }')
+          css_minor=$(echo "$current_css" | awk -F. '{ printf "%d.%d.0", $1, $2+1 }')
+          js_patch=$(echo "$current_js" | awk -F. '{ printf "%d.%d.%d", $1, $2, $3+1 }')
+          js_minor=$(echo "$current_js" | awk -F. '{ printf "%d.%d.0", $1, $2+1 }')
+
+          echo "css_patch=$css_patch" >> "$GITHUB_OUTPUT"
+          echo "css_minor=$css_minor" >> "$GITHUB_OUTPUT"
+          echo "js_patch=$js_patch" >> "$GITHUB_OUTPUT"
+          echo "js_minor=$js_minor" >> "$GITHUB_OUTPUT"
+
+      - name: Probe CSS patch URL
+        id: css_patch
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -I "https://trmnl.com/css/${{ steps.versions.outputs.css_patch }}/plugins.css")
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "404" ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Probe CSS minor URL
+        if: steps.css_patch.outputs.available == 'false'
+        id: css_minor
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -I "https://trmnl.com/css/${{ steps.versions.outputs.css_minor }}/plugins.css")
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "404" ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Probe JS patch URL
+        id: js_patch
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -I "https://trmnl.com/js/${{ steps.versions.outputs.js_patch }}/plugins.js")
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "404" ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Probe JS minor URL
+        if: steps.js_patch.outputs.available == 'false'
+        id: js_minor
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -I "https://trmnl.com/js/${{ steps.versions.outputs.js_minor }}/plugins.js")
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "404" ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Resolve new versions
+        id: resolve
+        run: |
+          if [ "${{ steps.css_patch.outputs.available }}" = "true" ]; then
+            new_css="${{ steps.versions.outputs.css_patch }}"
+          elif [ "${{ steps.css_minor.outputs.available }}" = "true" ]; then
+            new_css="${{ steps.versions.outputs.css_minor }}"
+          else
+            new_css=""
+          fi
+
+          if [ "${{ steps.js_patch.outputs.available }}" = "true" ]; then
+            new_js="${{ steps.versions.outputs.js_patch }}"
+          elif [ "${{ steps.js_minor.outputs.available }}" = "true" ]; then
+            new_js="${{ steps.versions.outputs.js_minor }}"
+          else
+            new_js=""
+          fi
+
+          echo "new_css=$new_css" >> "$GITHUB_OUTPUT"
+          echo "new_js=$new_js" >> "$GITHUB_OUTPUT"
+
+          if [ -z "$new_css" ] && [ -z "$new_js" ]; then
+            echo "has_update=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_update=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Log when no update available
+        if: steps.resolve.outputs.has_update != 'true'
+        run: echo "No new framework version (patch and minor returned 404). Exiting."
+
+      - name: Update config file
+        if: steps.resolve.outputs.has_update == 'true'
+        run: |
+          config=config/trmnl-blade.php
+          current_css="${{ steps.parse.outputs.current_css }}"
+          current_js="${{ steps.parse.outputs.current_js }}"
+          new_css="${{ steps.resolve.outputs.new_css }}"
+          new_js="${{ steps.resolve.outputs.new_js }}"
+
+          if [ -n "$new_css" ]; then
+            sed -i "s/'TRMNL_BLADE_FRAMEWORK_CSS_VERSION', '$current_css'/'TRMNL_BLADE_FRAMEWORK_CSS_VERSION', '$new_css'/" "$config"
+          fi
+          if [ -n "$new_js" ]; then
+            sed -i "s/'TRMNL_BLADE_FRAMEWORK_JS_VERSION', '$current_js'/'TRMNL_BLADE_FRAMEWORK_JS_VERSION', '$new_js'/" "$config"
+          fi
+
+      - name: Set PR title
+        if: steps.resolve.outputs.has_update == 'true'
+        id: pr_title
+        run: |
+          parts="Bump TRMNL framework"
+          [ -n "${{ steps.resolve.outputs.new_css }}" ] && parts="${parts} CSS ${{ steps.resolve.outputs.new_css }}"
+          [ -n "${{ steps.resolve.outputs.new_js }}" ] && parts="${parts} JS ${{ steps.resolve.outputs.new_js }}"
+          echo "title=${parts}" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request
+        if: steps.resolve.outputs.has_update == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "deps/trmnl-framework-${{ github.run_id }}"
+          delete-branch: true
+          commit-message: "Bump TRMNL framework version(s)"
+          title: ${{ steps.pr_title.outputs.title }}
+          body: "Nightly check found new framework version(s). See commit for updated config defaults."
+          add-paths: config/trmnl-blade.php
