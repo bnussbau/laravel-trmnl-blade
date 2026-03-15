@@ -1,5 +1,5 @@
 {
-    "name": "bnussbau/laravel-trmnl-blade",
+    "name": "bnussbau/trmnl-blade",
     "description": "Blade Components on top of the TRMNL Design System",
     "keywords": [
         "Benjamin Nussbaum",
@@ -8,7 +8,7 @@
         "TRMNL",
         "Design System"
     ],
-    "homepage": "https://github.com/bnussbau/laravel-trmnl-blade",
+    "homepage": "https://github.com/bnussbau/trmnl-blade",
     "license": "MIT",
     "authors": [
         {

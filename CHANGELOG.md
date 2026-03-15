@@ -6,25 +6,25 @@ All notable changes to `trmnl-blade` will be documented in this file.
 
 ### What's Changed
 
-* feat: bump `TRMNL_BLADE_FRAMEWORK_CSS_VERSION` to 2.3.3 by @github-actions[bot] in https://github.com/bnussbau/laravel-trmnl-blade/pull/13
+* feat: bump `TRMNL_BLADE_FRAMEWORK_CSS_VERSION` to 2.3.3 by @github-actions[bot] in https://github.com/bnussbau/trmnl-blade/pull/13
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.3.2...2.3.3
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.3.2...2.3.3
 
 ## 2.3.2 - 2026-02-27
 
 ### What's Changed
 
-* feat: bump TRMNL_BLADE_FRAMEWORK_CSS_VERSION to 2.3.2 by @github-actions[bot] in https://github.com/bnussbau/laravel-trmnl-blade/pull/12
+* feat: bump TRMNL_BLADE_FRAMEWORK_CSS_VERSION to 2.3.2 by @github-actions[bot] in https://github.com/bnussbau/trmnl-blade/pull/12
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.3.1...2.3.2
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.3.1...2.3.2
 
 ## 2.3.1 - 2026-02-10
 
 ### What's Changed
 
-* feat: bump `TRMNL_BLADE_FRAMEWORK_CSS_VERSION` to 2.3.1 by @github-actions[bot] in https://github.com/bnussbau/laravel-trmnl-blade/pull/10
+* feat: bump `TRMNL_BLADE_FRAMEWORK_CSS_VERSION` to 2.3.1 by @github-actions[bot] in https://github.com/bnussbau/trmnl-blade/pull/10
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.3.0...2.3.1
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.3.0...2.3.1
 
 ## 2.3.0 - 2026-02-09
 
@@ -32,7 +32,7 @@ All notable changes to `trmnl-blade` will be documented in this file.
 
 * feat: bump `TRMNL_BLADE_FRAMEWORK_CSS_VERSION` to 2.3.0
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.2.1...2.3.0
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.2.1...2.3.0
 
 ## 2.2.1 - 2026-02-05
 
@@ -44,16 +44,16 @@ All notable changes to `trmnl-blade` will be documented in this file.
   * JS: `2.1.0`
   
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.1.1...2.2.1
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.1.1...2.2.1
 
 ## 2.1.1 - 2026-01-29
 
 ### What's Changed
 
 * chore: update trmnl base url
-* chore(deps): bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/bnussbau/laravel-trmnl-blade/pull/9
+* chore(deps): bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/bnussbau/trmnl-blade/pull/9
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.1.0...2.1.1
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.1.0...2.1.1
 
 ## 2.1.0 - 2026-01-02
 
@@ -61,7 +61,7 @@ All notable changes to `trmnl-blade` will be documented in this file.
 
 * Bump default Framework version to 2.1.0
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.0.1...2.1.0
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.0.1...2.1.0
 
 ## 2.0.1 - 2025-09-22
 
@@ -69,13 +69,13 @@ All notable changes to `trmnl-blade` will be documented in this file.
 
 * fix: deprecate `markdown` component (was removed in [TRMNL Framework v2](https://usetrmnl.com/framework)). Use `richtext` instead.
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/2.0.0...2.0.1
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/2.0.0...2.0.1
 
 ## 2.0.0 - 2025-09-14
 
 ### What's Changed
 
-* feat(framework): adds compatibility with Framework v2 by @bnussbau in https://github.com/bnussbau/laravel-trmnl-blade/pull/6
+* feat(framework): adds compatibility with Framework v2 by @bnussbau in https://github.com/bnussbau/trmnl-blade/pull/6
   
   * added support for 2-bit, 4-bit screens and Device Variants
     
@@ -89,10 +89,10 @@ All notable changes to `trmnl-blade` will be documented in this file.
   * For details, see: https://usetrmnl.com/framework
     
   
-* chore(deps): bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/bnussbau/laravel-trmnl-blade/pull/5
+* chore(deps): bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/bnussbau/trmnl-blade/pull/5
   
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/1.2.1...2.0.0
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/1.2.1...2.0.0
 
 ## 1.2.1 - 2025-08-11
 
@@ -101,7 +101,7 @@ All notable changes to `trmnl-blade` will be documented in this file.
 * feat: allow custom js/css urls. allows pre-release testing of TRMNL Framework, or self-hosting
 * feat: add support for dark mode
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/1.2.0...1.2.1
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/1.2.0...1.2.1
 
 ## 1.2.0 - 2025-07-28
 
@@ -109,7 +109,7 @@ All notable changes to `trmnl-blade` will be documented in this file.
 
 * Bump default Framework version to 1.2.0
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/1.1.1...1.2.0
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/1.1.1...1.2.0
 
 ## 1.1.1 - 2025-07-14
 
@@ -117,15 +117,15 @@ All notable changes to `trmnl-blade` will be documented in this file.
 
 * Bump default Framework version to 1.1.1
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/1.1.0...1.1.1
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/1.1.0...1.1.1
 
 ## 1.1.0 - 2025-06-10
 
 ### What's Changed
 
-* feat: adds compatibility with TRMNL Design Framework v1.1 by @bnussbau in https://github.com/bnussbau/laravel-trmnl-blade/pull/1
+* feat: adds compatibility with TRMNL Design Framework v1.1 by @bnussbau in https://github.com/bnussbau/trmnl-blade/pull/1
 
-**Full Changelog**: https://github.com/bnussbau/laravel-trmnl-blade/compare/1.0.0...1.1.0
+**Full Changelog**: https://github.com/bnussbau/trmnl-blade/compare/1.0.0...1.1.0
 
 ## 1.0.0 - 2025-06-04
 
